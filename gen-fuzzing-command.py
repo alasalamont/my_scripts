@@ -5,20 +5,20 @@ init(autoreset=True) #Auto reset color for each print
 
 print(Fore.GREEN + "=====")
 print(Fore.BLUE + "Fuzzing common files when don't know targe-framework")
-print(f"{Style.BRIGHT}ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-large-files.txt -u $URL -fc 403,404 -t 150 -ic")
+print(f"{Style.BRIGHT}ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-large-files.txt -u $URL -fc 404 -t 150 -ic")
 
 print("")
 print(Fore.BLUE + "Fuzzing file that has no extension")
-print(f"{Style.BRIGHT}ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-large-words.txt -u $URL -fc 403,404 -t 150 -ic")
+print(f"{Style.BRIGHT}ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-large-words.txt -u $URL -fc 404 -t 150 -ic")
 
 print("")
 print(Fore.BLUE + "Fuzzing file with specific extension")
 print(f"{Fore.RED}{Style.BRIGHT}+ Don't forget add extension at $URL - export URL=http://example.com/FUZZ.php")
-print(f"{Style.BRIGHT}ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-large-words.txt -u $URL -fc 403,404 -t 150 -ic")
+print(f"{Style.BRIGHT}ffuf -c -w /usr/share/seclists/Discovery/Web-Content/raft-large-words.txt -u $URL -fc 404 -t 150 -ic")
 
 print("")
 print(Fore.BLUE + "Fuzzing PHP files from Common-PHP-Filenames.txt")
-print(f"{Style.BRIGHT}ffuf -c -w /usr/share/seclists/Discovery/Web-Content/Common-PHP-Filenames.txt -u $URL -fc 403,404 -t 150 -ic")
+print(f"{Style.BRIGHT}ffuf -c -w /usr/share/seclists/Discovery/Web-Content/Common-PHP-Filenames.txt -u $URL -fc 404 -t 150 -ic")
 
 print("")
 print(Fore.BLUE + "Fuzzing files and directories when target-web-server is IIS")
